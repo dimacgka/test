@@ -2,6 +2,8 @@ package httpServer
 
 import (
 	"fmt"
+	"github.com/gofiber/fiber/v2"
+	"github.com/rs/zerolog/log"
 	"test/config"
 )
 
@@ -19,14 +21,13 @@ func NewServer(cfg *config.Config) *Server {
 }
 
 func (s *Server) Run() error {
-	if err := s.MapHandlers(s.fiber, s.logger); err != nil {
-		s.logger.Warnf("Cannot map handlers: ", err)
+	if err := s.MapHandlers(s.fiber); err != nil {
 		panic(err)
 	}
 
-	s.logger.Infof("Start server on port: %s:%s", s.cfg.BaseConfig.System.Host, s.cfg.BaseConfig.System.Port)
+	log.Printf("Start server on port: %s:%s", s.cfg.BaseConfig.System.Host, s.cfg.BaseConfig.System.Port)
+
 	if err := s.fiber.Listen(fmt.Sprintf("%s:%s", s.cfg.BaseConfig.System.Host, s.cfg.BaseConfig.System.Port)); err != nil {
-		s.logger.Warnf("Error starting Server: ", err)
 		panic(err)
 	}
 

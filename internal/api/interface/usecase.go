@@ -1,7 +1,10 @@
 package apiInterface
 
-import "test/pkg/batch"
+import (
+	"github.com/gofiber/fiber/v2"
+	"test/pkg/batch"
+)
 
 type IUseCase interface {
-	Process(ctx fiber.Context, params batch.Batch) error
+	Process(ctx *fiber.Ctx, params batch.Batch) error
 }

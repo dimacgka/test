@@ -1,6 +1,7 @@
 package httpServer
 
 import (
+	"github.com/gofiber/fiber/v2"
 	apiHttp "test/internal/api/delivery/http"
 	"test/internal/api/usecase"
 	"test/pkg/batch"

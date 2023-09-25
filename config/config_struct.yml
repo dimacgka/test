@@ -1,0 +1,6 @@
+BaseConfig:
+  System:
+    host: ""
+    port: ""
+    max_goroutines: 0
+    key: ""

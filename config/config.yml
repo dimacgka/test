@@ -1,6 +1,6 @@
 BaseConfig:
   System:
     host: "0.0.0.0"
-    port: "8084"
+    port: "8080"
     max_goroutines: 15000
-    key: "xTK6dh5CQ3LRz_fBKn1AEHfcFkNDb07jPLz2rVFjiJU="
+    key: ""
