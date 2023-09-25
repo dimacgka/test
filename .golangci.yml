@@ -1,0 +1,9 @@
+linters-settings:
+  golint:
+    enabled: true
+  staticcheck:
+    enabled: true
+
+run:
+  paths:
+    - ./...
